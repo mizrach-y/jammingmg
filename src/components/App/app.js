@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import './app.css';
-
+import SearchResults from '../searhresults';
+import Playlist from '../playlist';
 class App extends Component {
   constructor(props){
     super(props);
