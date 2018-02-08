@@ -61,6 +61,7 @@ const Spotify = {
           .then(response => response.json())
           .then(jsonResponse => {
               let userId = jsonResponse.id;
+              console.log(jsonResponse);
               return this.createPlaylistWithTracks(userId, name, trackURIs);
           });
     },
@@ -105,13 +106,10 @@ const Spotify = {
         return {Authorization: `Bearer ${token}`};
     },
 
-    /* extracts everything between the end of the keyword and the limiter from the string. if the keyword
-     * was not found, return undefined. */
-    // TODO write some tests for this
     extract(string, keyword, limiter) {
         let startIndex = string.indexOf(keyword);
         if (startIndex !== -1) {
-            // add the length of the keyword to the start position to get the "real" start
+      // add the length of the keyword to the start position to get the "real" start
             startIndex += keyword.length;
             let endIndex = string.indexOf(limiter, startIndex);
             if (endIndex !== -1) {
