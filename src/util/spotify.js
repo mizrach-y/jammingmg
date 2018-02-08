@@ -5,7 +5,7 @@ const spotifyUserProfileAPI = 'https://api.spotify.com/v1/me';
 const spotifyPlaylistAPI = 'https://api.spotify.com/v1/users/${userId}/playlists';
 const spotifyPlaylistTracksAPI = 'https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks';
 const spotifyRedirectUrl = "http://localhost:3000";
-const redirect_uri = 'http://localhost:3000/callback';
+
 
 let accessToken;
 let expiresIn;

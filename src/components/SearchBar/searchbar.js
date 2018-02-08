@@ -12,7 +12,7 @@ class SearchBar extends React.Component{
       }
 
       render() {
-          // @Reviewer: I removed the SEARCH button, because it was useless. Is it a bug in the instrcutions or did I miss something?
+        
           return (
               <div className="SearchBar">
                   <input placeholder="Enter A Song, Album, or Artist" onChange={this.handleTermChange}/>

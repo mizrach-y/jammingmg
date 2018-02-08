@@ -19,7 +19,7 @@ class Track extends React.Component {
     }
 
     render() {
-        // @Reviewer the "toggling" logic is not very elegant...is there a better way?
+        
         return (
             <div className="Track">
                 <div className="Track-information">
