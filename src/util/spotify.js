@@ -29,7 +29,7 @@ const Spotify = {
         } else {
             // 3. case: fetch from spotify
             let state = 4321; // TODO generate state, save to app-state and validate
-            window.location.href = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-private&redirect_uri=${spotifyRedirectUrl}&state=${state}`;
+            window.location.href = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${spotifyRedirectUrl}&state=${state}`;
         }
     },
 
