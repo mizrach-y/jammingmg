@@ -22,8 +22,7 @@ class App extends Component {
 
     addTrack(track) {
 		if (this.state.playlistTracks.every(plTrack => plTrack.id !== track.id)) {
-			// @Reviewer is that the preferred way for building the new track list? I wasn't sure if it is allowed to modify playlistTracks directly,
-			// because it's part of the state.
+
 			let newPlaylistTracks = this.state.playlistTracks.concat(track);
 			this.setState({playlistTracks: newPlaylistTracks});
 		}
@@ -43,7 +42,7 @@ class App extends Component {
         let trackURIs = this.state.playlistTracks.map(track => track.uri);
         if (this.state.playlistName && trackURIs && trackURIs.length > 0) {
 			Spotify.savePlaylist(this.state.playlistName, trackURIs).then(() => {
-				// ????
+				// note sure ????
 				console.log(`new playlist with '${this.state.playlistName}' and ${trackURIs.length} songs successful saved.`);
 				this.setState({playlistName: 'New Playlist', playlistTracks: []});
 			});

@@ -12,11 +12,11 @@ let expiresIn;
 const Spotify = {
 
     getAccessToken() {
-        // 1. case: already there?
+
         if (accessToken) {
             return accessToken;
         }
-        // 2. case: already in URL?
+
         let url = window.location.href;
         accessToken = this.extract(url, "access_token=", "&");
         if (accessToken) {
@@ -26,8 +26,8 @@ const Spotify = {
             console.log("access token successful retrieved.");
             return accessToken;
         } else {
-            // 3. case: fetch from spotify
-            let state = 4321; // TODO generate state, save to app-state and validate
+
+            let state = 4321;
             window.location.href = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${spotifyRedirectUrl}&state=${state}`;
         }
     },
@@ -108,7 +108,7 @@ const Spotify = {
     extract(string, keyword, limiter) {
         let startIndex = string.indexOf(keyword);
         if (startIndex !== -1) {
-      // add the length of the keyword to the start position to get the "real" start
+    
             startIndex += keyword.length;
             let endIndex = string.indexOf(limiter, startIndex);
             if (endIndex !== -1) {
